@@ -200,22 +200,6 @@ var {}
 del {} 
 ins {}
 
-/*  ----- Table ----- */
-table {}
-caption {}
-thead {}
-tbody {}
-tfoot {}
-tr {}
-  tr:nth-child(even) {}
-th {}
-td {}
-  td:nth-child(1) {}
-colgroup {}
-data {}
-datalist {}
-
-
 /*  ----- Form ----- */
 form {
   max-width: 800px;
@@ -287,6 +271,7 @@ textarea {
   margin-bottom: 0.8rem;
   line-height: 2rem;
   font-size: 1rem;
+  padding: 0.8rem;
 }
 output {}
 meter {}
@@ -305,6 +290,72 @@ progress {}
   display: block;
 }
 
+#contactForm input[type="text"],
+#contactForm input[type="email"],
+#contactForm input[type="tel"],
+#contactForm textarea,
+#contactForm select {
+  width: 90%;
+}
+
+#orderContactForm input[type="text"],
+#orderContactForm input[type="email"],
+#orderContactForm input[type="tel"],
+#orderContactForm textarea,
+#orderContactForm select {
+  width: 90%;
+}
+
+.orderText {
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/*  ----- Table ----- */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+table {
+  label {
+    display: inline-flex;
+  }
+}
+
+#productTable th {
+  border: 2px solid var(--embellishment-color-blue);
+  padding: 0.5rem;
+  text-align: left;
+}
+
+/* Style the table data cells */
+#productTable td {
+  border: 2px solid var(--embellishment-color-blue);
+  padding: 0.5rem;
+}
+
+caption {
+  font-style: italic;
+  font-size: 1.5rem;
+}
+thead {
+  font-size: 1.2rem;
+}
+tbody {
+  font-size: 1rem;
+}
+tfoot {}
+tr {}
+  tr:nth-child(even) {}
+th {}
+td {}
+  td:nth-child(1) {}
+colgroup {}
+data {}
+datalist {}
 
 /* ----- Media ----- */
 figure {}
@@ -406,3 +457,5 @@ object {}
 @media print {}
 
 /*   ===== END OF FILE =====  */
+
+

@@ -5,11 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="robots" content="noindex"> 
         <link rel="stylesheet" href="style.css">
-        <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png"> 
-        <link rel="icon" type="image/png" sizes="512x512" href="./images/android-chrome-512x512.png"> 
-        <link rel="icon" type="image/png" sizes="192x192" href="./images/android-chrome-192x192.png"> 
-        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> 
-        <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png"> 
+        <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png"> 
+        <link rel="icon" type="image/png" sizes="512x512" href="./android-chrome-512x512.png"> 
+        <link rel="icon" type="image/png" sizes="192x192" href="./android-chrome-192x192.png"> 
+        <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png"> 
+        <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png"> 
         <link rel="manifest" href="site.webmanifest">
         <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,26 +41,13 @@
         <section>
             <h2>Order</h2>
                 <article>
-                    <script>
-                        // Define a JavaScript object with arrays of products, their company names, and prices: 
-                        const products = [
-                            { company: 'AGYM', product: 'Spinning Cat Scratcher Ball', price: 52.99 },
-                            { company: 'Jasonwell', product: 'Foldable Dog Pool', price: 27.25 },
-                            { company: 'Expawlorer', product: 'Dog Fence Window', price: 30.50 },
-                            { company: 'Lollimeow', product: 'Capsule Pet Travel Backpack', price: 59.00 },
-                            { company: 'Drool\'d', product: 'Cat Hamster Wheel', price: 349.75 }
-                        ];
-                    
-                        // Log the products array to the console
-                        console.log(products);
-                    </script>
                     <p>Looking for pet products? Let's get started.</p>
                     
                     <form id="orderContactForm" action="/order" method="POST">
                         <fieldset>
                             <legend>Your Information</legend>
                                 <label for="firstName">First Name:</label>
-                                    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                                    <input type="text" id="firstName" name="firstName" placeholder="First Name" required autofocus>
                                 <label for="lastName">Last Name:</label>
                                     <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
                                 <label for="email">Email:</label>
@@ -136,7 +123,7 @@
                         <fieldset>
                             <legend>Our pet products</legend>
 
-                            <table>
+                            <table id="productTable">
                                 <caption>Make your selection below:</caption>
                                 <thead>
                                     <tr>
@@ -148,48 +135,58 @@
                                 <tbody>
                                     <tr>
                                         <td>AGYM</td>
-                                        <td>
-                                            <label for="catBall">Spinning Cat Scratcher Ball</label>
-                                            <input type="radio" id="catBall" name="product" min="0" max="25" value="Spinning Cat Scratcher Ball"> 
+                                        <td> 
+                                            <label for="catBall">
+                                                <input type="radio" id="catBall" name="userProduct" value="Spinning Cat Scratcher Ball" required>
+                                                Spinning Cat Scratcher Ball
+                                            </label>
                                         </td>
-                                        <td>$52.99</td>
+                                        <td>52.99</td>
                                     </tr>
                                     <tr>
                                         <td>Jasonwell</td>
                                         <td>
-                                            <label for="dogPool">Foldable Dog Pool</label>
-                                            <input type="radio" id="dogPool" name="product" min="0" max="10" value="Foldable Dog Pool">
+                                            <label for="dogPool">
+                                                <input type="radio" id="dogPool" name="userProduct"  value="Foldable Dog Pool">
+                                                Foldable Dog Pool
+                                            </label>
                                         </td>
-                                        <td>$27.25</td>
+                                        <td>27.25</td>
                                     </tr>
                                     <tr>
                                         <td>Expawlorer</td>
                                         <td>
-                                            <label for="dogWindow">Dog Fence Window</label>
-                                            <input type="radio" id="dogWindow" name="product" min="0" max="50" value="Dog Fence Window">
+                                            <label for="dogWindow">
+                                                <input type="radio" id="dogWindow" name="userProduct"  value="Dog Fence Window">
+                                                Dog Fence Window
+                                            </label>
                                         </td>
-                                        <td>$30.50</td>
+                                        <td>30.50</td>
                                     </tr>
                                     <tr>
                                         <td>Lollimeow</td>
                                         <td>
-                                            <label for="backpack">Capsule Pet Travel Backpack</label>
-                                            <input type="radio" id="backpack" name="product" min="0" max="100" value="Capsule Pet Travel Backpack">
+                                            <label for="backpack">
+                                                <input type="radio" id="backpack" name="userProduct" value="Capsule Pet Travel Backpack">
+                                                Capsule Pet Travel Backpack
+                                            </label>
                                         </td>
-                                        <td>$59.00</td>
+                                        <td>59.00</td>
                                     </tr>
                                     <tr>
                                         <td>Drool'd</td>
                                         <td>
-                                            <label for="catWheel">Cat Hamster Wheel</label>
-                                            <input type="radio" id="catWheel" name="product" min="0" max="15" value="Cat Hamster Wheel">
+                                            <label for="catWheel">
+                                                <input type="radio" id="catWheel" name="userProduct" value="Cat Hamster Wheel">
+                                                Cat Hamster Wheel
+                                            </label>
                                         </td>
-                                        <td>$349.75</td>
+                                        <td>349.75</td>
                                     </tr>
                                 </tbody>
 
                                 <p>How many of this product would you like?</p>
-                                <label for="quantity">Quantity:</label>
+                                <label for="quantity">Quantity: (maximum 100)</label>
                                 <input type="number" id="quantity" name="quantity" min="1" max="100" value="1">
 
                                 
